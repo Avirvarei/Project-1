@@ -12,23 +12,29 @@ def get_numbers(list):
                 except ValueError:
                     pass
     return numbers
+
+
 def only_numbers(line):
-    #returns True or False after checking if element is integer
+    # returns True or False after checking if element is integer
     for element in line:
         if element not in "0123456789":
             return False
     return True
-def main(path):
-    #writes numbers in out.txt file
+
+
+def main():
+    # writes numbers in out.txt file
+    path = input("Please write the path to file: ")
     out = open("out.txt", "w")
     with open(path) as file:
-        #gets numbers and writes them in out.txt file
+        # gets numbers and writes them in out.txt file
         lines = file.read().splitlines()
         line = get_numbers(lines)
         for item in line:
             out.write("%s\n" % item)
         out.close()
+
+
 if __name__ == "__main__":
-    #execute only if run as a script
-    path = input("Please write the path to file: ")
-    main(path)
+    # execute only if run as a script
+    main()

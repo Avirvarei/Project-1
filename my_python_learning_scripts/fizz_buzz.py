@@ -10,7 +10,8 @@ def fizz_buzz(number):
         else:
             list.append(str(i))
     return ",".join(list)
-if __name__ == "__main__":
+	
+def main():
     while True:
         n = input("Please write a natural number: ")
         # check if input is not number
@@ -20,3 +21,6 @@ if __name__ == "__main__":
             print(fizz_buzz(int(n)))
         except ValueError:
             print("This is not a natural number!")
+			
+if __name__ == "__main__":
+    main()
