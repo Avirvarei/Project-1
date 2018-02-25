@@ -1,7 +1,5 @@
 from unittest import TestCase
-from scripts import main
-from scripts import get_numbers
-from code import characters
+from my_python_learning_scripts.script1 import parse_file, get_numbers
 
 
 class TestScript1(TestCase):
@@ -37,7 +35,7 @@ class Test_Files(TestCase):
             z.write(str(i))
             z.write("\n")
         z.close()
-        main("input.txt")
+        parse_file("input.txt")
         o = []
         with open("out.txt", "r") as l:
             for line in l:

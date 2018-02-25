@@ -22,9 +22,7 @@ def only_numbers(line):
     return True
 
 
-def main():
-    # writes numbers in out.txt file
-    path = input("Please write the path to file: ")
+def parse_file(path):
     out = open("out.txt", "w")
     with open(path) as file:
         # gets numbers and writes them in out.txt file
@@ -33,6 +31,12 @@ def main():
         for item in line:
             out.write("%s\n" % item)
         out.close()
+
+
+def main():
+    # writes numbers in out.txt file
+    path = input("Please write the path to file: ")
+    parse_file(path)
 
 
 if __name__ == "__main__":
