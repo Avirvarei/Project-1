@@ -1,9 +1,13 @@
-def get_numbers(list):
+"""Write in a file the numbers from the given path."""
+
+
+def get_numbers(lists):
+    """Return list of only the numbers from list."""
     numbers = []
-    for element in list:
-        if type(element) == int or type(element) == float:
+    for element in lists:
+        if isinstance(element, (int, float)):
             numbers.append(element)
-        if type(element) == str:
+        if isinstance(element, str):
             if only_numbers(element):
                 numbers.append(int(element))
             else:
@@ -15,7 +19,7 @@ def get_numbers(list):
 
 
 def only_numbers(line):
-    # returns True or False after checking if element is integer
+    """Return True if line is int."""
     for element in line:
         if element not in "0123456789":
             return False
@@ -23,10 +27,11 @@ def only_numbers(line):
 
 
 def parse_file(path):
+    """Write in out.txt the numbers from the file from the given path."""
     out = open("out.txt", "w")
-    with open(path) as file:
+    with open(path) as txt:
         # gets numbers and writes them in out.txt file
-        lines = file.read().splitlines()
+        lines = txt.read().splitlines()
         line = get_numbers(lines)
         for item in line:
             out.write("%s\n" % item)
@@ -34,11 +39,11 @@ def parse_file(path):
 
 
 def main():
-    # writes numbers in out.txt file
+    """Give path to the file."""
+    # write numbers in out.txt file
     path = input("Please write the path to file: ")
     parse_file(path)
 
 
 if __name__ == "__main__":
-    # execute only if run as a script
     main()

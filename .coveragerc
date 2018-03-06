@@ -1,0 +1,11 @@
+[run]
+branch = True
+source =
+    my_python_learning_scripts
+
+
+[paths]
+source =
+    my_python_learning_scripts
+    .tox/*/lib/python*/site-packages/my_python_learning_scripts
+    .tox/pypy/site-packages/my_python_learning_scripts
